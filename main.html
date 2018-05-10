@@ -7,6 +7,43 @@
 <body>
     <script type="text/javascript">VSS.init();</script>
     <h1>Extended Main</h1>
-    <script type="text/javascript">VSS.notifyLoadSucceeded();</script>
+    <script type="text/javascript">
+        VSS.require(["VSS/Controls", "VSS/Controls/Menus"], function(Controls, Menus) {
+        var container = $("#sample-container");
+
+
+        var menuItems = [
+            { id: "file", text: "File", icon: "icon-pause", childItems: [
+            { separator: true, text: "NEW" }, // Separator as group text
+            { id: "new-tab", text: "New tab", icon: "icon-info" },
+            { id: "new-file", text: "New file", icon: "icon-commented-file" },
+            { separator: true, text: "SAVE" }, , // Separator as group text
+            { id: "save-file", text: "Save file", icon: "icon-save" },
+            { id: "save-file-close", text: "Save file & close", icon: "icon-save-close" },
+            { separator: true}, // Default separator
+            { id: "save-all", text: "Save all", icon: "icon-save-all" },
+            { separator: true, text: "MISC"}, // Separator as group text
+            { id: "recent-files", text: "Recent files", icon: "icon-play", childItems: [
+                { id: "file1", text: "file1.txt", icon: "icon-restricted" },
+                { id: "file2", text: "file2.txt", icon: "icon-restricted" },
+                { id: "file3", text: "file3.txt", icon: "icon-restricted" }
+            ]},
+            { id: "exit", text: "Exit" }
+            ]},
+            { separator: true }, // Default separator
+            { id: "settings", text: "Settings...", icon: "icon-settings" },
+            { id: "help", text: "Help", icon: "icon-help", tag: "test" }   
+        ];
+
+        var menubarOptions = {
+            items: menuItems
+        };
+
+        var menubar = Controls.create(Menus.MenuBar, container, menubarOptions);
+
+        });
+
+        VSS.notifyLoadSucceeded();
+    </script>
 </body>
 </html>
