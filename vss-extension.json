@@ -6,8 +6,7 @@
     "description":  "An extension for extending the functionalities in TFS/VSTS for better administration.",
     "publisher":  "Philosophers-DevOPS",
     "categories": [
-        "Build and release",
-        "Plan and track"
+        "Build and release"
     ],
     "tags": [
         "admin",
