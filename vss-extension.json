@@ -31,9 +31,13 @@
                           {
                               "id":  "Extended.AdminHub",
                               "type":  "ms.vss-web.hub",
-                              "description":  "Adds an \u0027Extended\u0027 hub to the Collection hub group.",
+                              "description":  "Adds an Extended hub to the Collection hub group.",
                               "targets":  "ms.vss-web.collection-admin-hub-group",
-                              "properties":  "@{name=Extended Admin; order=99; uri=main.html}"
+                              "properties":  {
+                                  "name":"Extended Admin",
+                                  "order":99,
+                                  "uri":"main.html"
+                                }
                           }
                       ],
     "scopes":  [
